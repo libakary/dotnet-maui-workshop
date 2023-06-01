@@ -11,10 +11,9 @@ public partial class MonkeysViewModel : BaseViewModel
 	{
 		Title = "Monkey Finder";
 		this.monkeyService = monkeyService;
-
 	}
 
-	[ICommand]
+	[RelayCommand]
 	async Task GetMonkeysAsync()
 	{
 		if (IsBusy)
