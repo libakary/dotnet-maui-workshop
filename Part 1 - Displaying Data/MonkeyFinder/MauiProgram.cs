@@ -21,6 +21,11 @@ public static class MauiProgram
 #endif
 		//singelton- create this once and keep it around
 		//transient- create new one every time called
+
+		builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
+		builder.Services.AddSingleton<IGeolocation>(Geolocation.Default);
+		builder.Services.AddSingleton<IMap>(Map.Default);
+
 		builder.Services.AddSingleton<MonkeyService>();
 
 		builder.Services.AddSingleton<MonkeysViewModel>();
